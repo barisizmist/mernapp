@@ -23,7 +23,7 @@ export default function Exercises() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://powerful-island-63545.herokuapp.com/users")
       .then((response) => {
         setRows(response.data);
       })

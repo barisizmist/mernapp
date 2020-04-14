@@ -12,7 +12,7 @@ export default function AddExercise() {
     const user = {
       username,
     };
-    axios.post("http://localhost:5000/users/add", user);
+    axios.post("https://powerful-island-63545.herokuapp.com/users/add", user);
     window.location = "/users";
   };
 

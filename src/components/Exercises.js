@@ -12,7 +12,7 @@ export default function MaterialTableDemo() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/exercises")
+      .get("https://powerful-island-63545.herokuapp.com/exercises")
       .then((response) => {
         setState({
           data: response.data,
@@ -20,7 +20,7 @@ export default function MaterialTableDemo() {
       })
       .catch((err) => console.log(err));
     axios
-      .get("http://localhost:5000/users")
+      .get("https://powerful-island-63545.herokuapp.com/users")
       .then((res) => {
         setUsers(res.data);
       })
@@ -63,7 +63,10 @@ export default function MaterialTableDemo() {
               setState((prevState) => {
                 const data = [...prevState.data];
                 data.push(newData);
-                axios.post("http://localhost:5000/exercises/add", newData);
+                axios.post(
+                  "https://powerful-island-63545.herokuapp.com/exercises/add",
+                  newData
+                );
                 return {
                   ...prevState,
                   data,
@@ -78,7 +81,8 @@ export default function MaterialTableDemo() {
                   const data = [...prevState.data];
                   data[data.indexOf(oldData)] = newData;
                   axios.post(
-                    "http://localhost:5000/exercises/update/" + oldData._id,
+                    "https://powerful-island-63545.herokuapp.com/exercises/update/" +
+                      oldData._id,
                     newData
                   );
                   return {
@@ -94,7 +98,10 @@ export default function MaterialTableDemo() {
               setState((prevState) => {
                 const data = [...prevState.data];
                 data.splice(data.indexOf(oldData), 1);
-                axios.delete("http://localhost:5000/exercises/" + oldData._id);
+                axios.delete(
+                  "https://powerful-island-63545.herokuapp.com/exercises/" +
+                    oldData._id
+                );
                 return {
                   ...prevState,
                   data,

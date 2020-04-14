@@ -23,15 +23,20 @@ export default function AddExercise() {
       date,
     };
 
-    axios.post("http://localhost:5000/exercises/add", exercise).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .post(
+        "https://powerful-island-63545.herokuapp.com/exercises/add",
+        exercise
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
     window.location = "/";
   };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://powerful-island-63545.herokuapp.com/users")
       .then((res) => {
         setUsers(res.data);
       })
