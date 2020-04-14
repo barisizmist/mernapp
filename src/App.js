@@ -11,12 +11,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        <Route path="/" exact component={Exercises} />
-        {/* <Route path="/edit/:id" component={} /> */}
-        <Route path="/add" component={AddExercise} />
-        <Route path="/add-user" component={AddUser} />
-        <Route path="/users" component={Users} />
+        <Navbar>
+          <Route path="/" exact component={Exercises} />
+          <Route path="/add" component={AddExercise} />
+          <Route path="/add-user" component={AddUser} />
+          <Route path="/users" component={Users} />
+        </Navbar>
       </Router>
     </div>
   );

@@ -12,10 +12,8 @@ export default function AddExercise() {
     const user = {
       username,
     };
-    axios
-      .post("http://localhost:5000/users/add", user)
-      .then((res) => console.log(res.data));
-    // window.location = "/users";
+    axios.post("http://localhost:5000/users/add", user);
+    window.location = "/users";
   };
 
   return (
